@@ -1082,6 +1082,7 @@ static int usb_diag_update_pid_and_serial_num(uint32_t pid, const char *snum)
 	return 0;
 }
 
+#ifdef CONFIG_USB_ANDROID
 static struct android_usb_platform_data android_usb_pdata = {
 	.update_pid_and_serial_num = usb_diag_update_pid_and_serial_num,
 };
@@ -1093,6 +1094,7 @@ static struct platform_device android_usb_device = {
 		.platform_data = &android_usb_pdata,
 	},
 };
+#endif
 
 #ifdef CONFIG_MSM_CAMERA
 #ifdef CONFIG_WEBCAM_MT9M113
