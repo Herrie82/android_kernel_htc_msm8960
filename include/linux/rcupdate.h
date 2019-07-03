@@ -918,7 +918,7 @@ static inline notrace void rcu_read_unlock_sched_notrace(void)
 		BUILD_BUG_ON(!__is_kfree_rcu_offset(offset)); \
 		call_rcu(head, (void (*)(struct rcu_head *))(unsigned long)(offset)); \
 	} while (0)
-        
+
 /**
  * kfree_rcu() - kfree an object after a grace period.
  * @ptr:	pointer to kfree
